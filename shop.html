@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | Linet Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre la tienda oficial de Linet Coaching. Encuentra recursos, herramientas, ebooks y cursos digitales diseñados para acelerar tu crecimiento personal.">
+
+    <!-- Favicon e Iconos de Apple -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tienda | Linet Coaching">
+    <meta property="og:description" content="Descubre la tienda oficial de Linet Coaching. Encuentra recursos, herramientas, ebooks y cursos digitales diseñados para acelerar tu crecimiento personal.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.linetcoaching.com/shop.html">
+    <meta property="og:image" content="https://www.linetcoaching.com/assets/og-shop.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.linetcoaching.com/shop.html">
+
+    <!-- Schema.org Markup para Productos -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product",
+          "name": "Lidera sin Límites",
+          "image": "https://www.linetcoaching.com/assets/ebook-liderazgo.jpg",
+          "description": "Una guía práctica para superar el síndrome del impostor y liderar con total autenticidad.",
+          "offers": {
+            "@type": "Offer",
+            "price": "24.99",
+            "priceCurrency": "ARS",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.linetcoaching.com/shop.html"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Proyecta tu Autoridad",
+          "image": "https://www.linetcoaching.com/assets/curso-productividad.jpg",
+          "description": "Curso digital para dominar la comunicación estratégica y multiplicar tu visibilidad.",
+          "offers": {
+            "@type": "Offer",
+            "price": "97.00",
+            "priceCurrency": "ARS",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.linetcoaching.com/shop.html"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CSS Final Compilado -->
+    <link href="output.css" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Importación de las tipografías definidas en Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Evitar parpadeo de modo oscuro al cargar -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light dark:bg-black text-gray-800 dark:text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Loader Inicial -->
+    <div id="page-loader" class="fixed inset-0 z-[100] bg-brand-light dark:bg-black flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute w-16 h-16 border-4 border-gray-200 dark:border-brand-dark rounded-full"></div>
+            <div class="absolute w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <p class="mt-6 font-serif text-accent font-bold tracking-widest animate-pulse">Linet.</p>
+    </div>
+
+    <!-- Navbar -->
+    <div id="header-placeholder"></div>
+
+    <!-- Shop Hero -->
+    <section class="pt-40 pb-12 bg-brand-light dark:bg-black border-b border-gray-200 dark:border-brand-dark transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6 leading-tight animate-fade-in-up">Tienda Oficial</h1>
+            <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed max-w-2xl mx-auto font-sans animate-fade-in-up">Recursos, herramientas y cursos digitales diseñados para acelerar tu crecimiento personal y profesional.</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <main class="flex-grow py-16 bg-brand-light dark:bg-black transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Controles de Filtrado (Buscador + Categorías) -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
+                <!-- Buscador -->
+                <div class="relative w-full md:max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass text-gray-400" aria-hidden="true"></i>
+                    </div>
+                    <input type="text" id="product-search" aria-label="Buscar productos" class="w-full bg-white dark:bg-brand-darker border border-gray-200 dark:border-gray-700 rounded-xl pl-12 pr-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors shadow-sm" placeholder="Buscar cursos, ebooks...">
+                </div>
+                
+                <!-- Categorías -->
+                <div class="flex flex-wrap justify-center md:justify-end gap-2" id="category-filters" role="group" aria-label="Filtrar por categoría">
+                    <button class="filter-btn bg-accent text-white border-accent border px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" data-category="todos" aria-pressed="true">Todos</button>
+                    <button class="filter-btn bg-white dark:bg-brand-darker text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-brand-dark border border-gray-200 dark:border-brand-dark px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" data-category="ebook" aria-pressed="false">E-Books</button>
+                    <button class="filter-btn bg-white dark:bg-brand-darker text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-brand-dark border border-gray-200 dark:border-brand-dark px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" data-category="curso" aria-pressed="false">Cursos</button>
+                </div>
+            </div>
+
+            <!-- Mensaje de Sin Resultados (Oculto) -->
+            <div id="no-results-msg" role="alert" class="hidden text-center py-12 w-full col-span-full">
+                <i class="fa-solid fa-magnifying-glass text-4xl text-gray-300 dark:text-brand-dark mb-4" aria-hidden="true"></i>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">No se encontraron productos</h3>
+                <p class="text-gray-500 dark:text-gray-400">Intenta buscar con otras palabras clave.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Producto 1 -->
+                <div class="reveal product-card bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:border-accent/30 transition-all duration-300 border border-gray-100 dark:border-gray-800 group hover:-translate-y-2 flex flex-col" data-category="ebook">
+                    <div class="aspect-video bg-gray-200 dark:bg-brand-dark relative overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <!-- Insignia Nuevo -->
+                    <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-10 shadow-md">Nuevo</div>
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600" alt="Portada E-Book Lidera sin Límites" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <span class="text-accent dark:text-magenta-500 text-xs font-bold uppercase tracking-wider mb-3 block">E-Book</span>
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3 leading-tight">Lidera sin Límites</h3>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm mb-8 flex-grow">Una guía práctica para superar el síndrome del impostor, comunicar tu valor y liderar con total autenticidad.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-bold text-gray-900 dark:text-white">$24.99</span>
+                            <a href="https://mpago.la/TU_ENLACE_1" target="_blank" rel="noopener noreferrer" aria-label="Añadir Lidera sin Límites al carrito" class="add-to-cart-btn inline-block bg-accent hover:bg-accent-hover dark:bg-magenta-600 dark:hover:bg-magenta-500 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-accent/30 dark:shadow-magenta-500/30 hover:shadow-accent/50">
+                                Comprar <i class="fa-solid fa-cart-shopping ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="reveal product-card bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:border-accent/30 transition-all duration-300 border border-gray-100 dark:border-gray-800 group hover:-translate-y-2 flex flex-col" data-category="curso">
+                    <div class="aspect-video bg-gray-200 dark:bg-brand-dark relative overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <!-- Insignia Oferta -->
+                    <div class="absolute top-4 right-4 bg-brand-dark dark:bg-white text-white dark:text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-10 shadow-md">-20% Oferta</div>
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600" alt="Portada Curso Digital Proyecta tu Autoridad" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <span class="text-accent dark:text-magenta-500 text-xs font-bold uppercase tracking-wider mb-3 block">Curso Digital</span>
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3 leading-tight">Proyecta tu Autoridad</h3>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm mb-8 flex-grow">Curso digital de 4 módulos para dominar la comunicación estratégica y multiplicar tu visibilidad profesional.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-bold text-gray-900 dark:text-white">$97.00</span>
+                            <a href="https://mpago.la/TU_ENLACE_2" target="_blank" rel="noopener noreferrer" aria-label="Añadir Proyecta tu Autoridad al carrito" class="add-to-cart-btn inline-block bg-accent hover:bg-accent-hover dark:bg-magenta-600 dark:hover:bg-magenta-500 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-accent/30 dark:shadow-magenta-500/30 hover:shadow-accent/50">
+                                Comprar <i class="fa-solid fa-cart-shopping ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="reveal product-card bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:border-accent/30 transition-all duration-300 border border-gray-100 dark:border-gray-800 group hover:-translate-y-2 flex flex-col" data-category="ebook">
+                    <div class="aspect-video bg-gray-200 dark:bg-brand-dark relative overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <!-- Insignia Más vendido -->
+                    <div class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-10 shadow-md">Más vendido</div>
+                    <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=600" alt="Portada Planner Anual Estratégico" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <span class="text-accent dark:text-magenta-500 text-xs font-bold uppercase tracking-wider mb-3 block">Plantilla / E-Book</span>
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3 leading-tight">Planner Anual Estratégico</h3>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm mb-8 flex-grow">Plantillas descargables y guía paso a paso para definir, organizar y ejecutar tus objetivos profesionales.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-2xl font-bold text-gray-900 dark:text-white">$14.99</span>
+                            <a href="https://mpago.la/TU_ENLACE_3" target="_blank" rel="noopener noreferrer" aria-label="Añadir Planner Anual Estratégico al carrito" class="add-to-cart-btn inline-block bg-accent hover:bg-accent-hover dark:bg-magenta-600 dark:hover:bg-magenta-500 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-accent/30 dark:shadow-magenta-500/30 hover:shadow-accent/50">
+                                Comprar <i class="fa-solid fa-cart-shopping ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Compartido -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Botón Subir Arriba -->
+    <button id="scroll-to-top-btn" class="fixed bottom-28 right-7 z-40 bg-gray-800 dark:bg-white text-white dark:text-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none translate-y-10 focus:outline-none" aria-label="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Botón Flotante WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-fade-in-up">
+        <div id="wa-tooltip" class="hidden bg-white dark:bg-brand-darker text-gray-800 dark:text-gray-200 text-sm py-3 px-4 rounded-2xl shadow-xl border border-gray-100 dark:border-brand-dark relative transition-all duration-300 origin-bottom-right scale-0 opacity-0">
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-[#25D366]"></span>
+                </span>
+                <p class="font-medium pr-4">¡Hola! ¿En qué puedo ayudarte?</p>
+            </div>
+            <button id="close-wa-tooltip" class="absolute top-1 right-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 rounded-full transition-colors" aria-label="Cerrar mensaje">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+            <div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-white dark:bg-brand-darker border-b border-r border-gray-100 dark:border-brand-dark transform rotate-45"></div>
+        </div>
+        <a href="https://wa.me/34600000000?text=%C2%A1Hola%20Linet!%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform duration-300" aria-label="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Script Unificado -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

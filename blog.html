@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Linet Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Artículos, recursos y reflexiones sobre liderazgo, mentalidad y crecimiento profesional.">
+
+    <!-- Favicon e Iconos de Apple -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Importación de las tipografías definidas en Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Final Compilado -->
+    <link href="output.css" rel="stylesheet">
+
+    <!-- Evitar parpadeo de modo oscuro al cargar -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light dark:bg-black text-gray-800 dark:text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+    
+    <!-- Loader Inicial -->
+    <div id="page-loader" class="fixed inset-0 z-[100] bg-brand-light dark:bg-black flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute w-16 h-16 border-4 border-gray-200 dark:border-brand-dark rounded-full"></div>
+            <div class="absolute w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <p class="mt-6 font-serif text-accent font-bold tracking-widest animate-pulse">Linet.</p>
+    </div>
+
+    <!-- Navbar -->
+    <div id="header-placeholder"></div>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow pt-32 pb-20">
+        
+        <!-- Cabecera del Blog -->
+        <section class="mb-16 px-4 animate-fade-in-up">
+            <div class="max-w-6xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-gray-800 dark:text-white mb-6 leading-tight">Reflexiones y Estrategia</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-sans">Artículos, recursos y consejos prácticos sobre liderazgo femenino, mentalidad y crecimiento corporativo.</p>
+            </div>
+        </section>
+
+        <!-- Listado de Artículos -->
+        <section class="px-4">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Controles de Filtrado (Buscador + Categorías) -->
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
+                    <!-- Buscador -->
+                    <div class="relative w-full md:max-w-md">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="fa-solid fa-magnifying-glass text-gray-400" aria-hidden="true"></i>
+                        </div>
+                        <input type="text" id="blog-search" aria-label="Buscar artículos" class="w-full bg-white dark:bg-brand-darker border border-gray-200 dark:border-gray-700 rounded-xl pl-12 pr-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-brand-darker transition-colors shadow-sm" placeholder="Buscar artículos...">
+                    </div>
+                    
+                    <!-- Categorías -->
+                    <div class="flex flex-wrap justify-center md:justify-end gap-2" id="category-filters" role="group" aria-label="Filtrar por categoría">
+                        <button class="filter-btn bg-accent text-white border-accent border px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" data-category="todos" aria-pressed="true">Todos</button>
+                        <button class="filter-btn bg-white dark:bg-brand-darker text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-brand-dark border border-gray-200 dark:border-brand-dark px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" data-category="liderazgo" aria-pressed="false">Liderazgo</button>
+                        <button class="filter-btn bg-white dark:bg-brand-darker text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-brand-dark border border-gray-200 dark:border-brand-dark px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" data-category="negociacion" aria-pressed="false">Negociación</button>
+                        <button class="filter-btn bg-white dark:bg-brand-darker text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-brand-dark border border-gray-200 dark:border-brand-dark px-5 py-2.5 rounded-xl text-sm font-medium transition-colors" data-category="productividad" aria-pressed="false">Productividad</button>
+                    </div>
+                </div>
+
+                <!-- Mensaje de Sin Resultados (Oculto) -->
+                <div id="no-results-msg" role="alert" class="hidden text-center py-12 w-full">
+                    <i class="fa-solid fa-magnifying-glass text-4xl text-gray-300 dark:text-brand-dark mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">No se encontraron artículos</h3>
+                    <p class="text-gray-500 dark:text-gray-400">Intenta buscar con otras palabras clave.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Artículo Destacado (Síndrome del Impostor) -->
+                    <article class="blog-card reveal md:col-span-2 lg:col-span-2 bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-brand-dark group flex flex-col md:flex-row" data-category="liderazgo">
+                        <div class="md:w-1/2 aspect-video md:aspect-auto overflow-hidden relative">
+                            <a href="blog-post.html" class="absolute inset-0 z-10" aria-label="Leer más"></a>
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800" alt="Síndrome del Impostor" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="bg-accent/10 text-accent dark:bg-accent/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider font-poppins">Liderazgo</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-xs"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> 5 min</span>
+                            </div>
+                            <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-4 group-hover:text-accent transition-colors"><a href="blog-post.html">Cómo superar el Síndrome del Impostor en tu carrera profesional</a></h2>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-6 flex-grow">Descubre estrategias prácticas para silenciar esa voz interna que te dice que no eres suficiente y empieza a liderar con total confianza.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">15 de Mayo, 2024</span>
+                                <a href="blog-post.html" class="text-accent font-bold text-sm hover:underline underline-offset-4 transition-all">Leer artículo &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Artículo Secundario 1 -->
+                    <article class="blog-card reveal bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-brand-dark group flex flex-col" data-category="negociacion">
+                        <div class="aspect-video overflow-hidden relative">
+                            <a href="#" class="absolute inset-0 z-10" aria-label="Leer más"></a>
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="Negociar salario" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-accent text-xs font-bold uppercase tracking-wider font-poppins">Negociación</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-xs"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> 7 min</span>
+                            </div>
+                            <h2 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-3 group-hover:text-accent transition-colors"><a href="#">El arte de negociar tu salario sin sentirte culpable</a></h2>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-4 flex-grow line-clamp-3">Aprende a comunicar tu valor real en la mesa de negociación. Consejos prácticos para pedir ese aumento que te mereces.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">02 de Mayo, 2024</span>
+                                <a href="#" class="text-accent font-bold text-sm hover:underline underline-offset-4 transition-all">Leer artículo &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Artículo Secundario 2 -->
+                    <article class="blog-card reveal bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-brand-dark group flex flex-col" data-category="productividad">
+                        <div class="aspect-video overflow-hidden relative">
+                            <a href="#" class="absolute inset-0 z-10" aria-label="Leer más"></a>
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=600" alt="Productividad" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-accent text-xs font-bold uppercase tracking-wider font-poppins">Productividad</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-xs"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> 4 min</span>
+                            </div>
+                            <h2 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-3 group-hover:text-accent transition-colors"><a href="#">Productividad para líderes ocupadas</a></h2>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-4 flex-grow line-clamp-3">Deja de apagar fuegos y empieza a dirigir. Descubre mi sistema de bloques de tiempo para recuperar el control de tu agenda.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">20 de Abril, 2024</span>
+                                <a href="#" class="text-accent font-bold text-sm hover:underline underline-offset-4 transition-all">Leer artículo &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Artículo Secundario 3 -->
+                    <article class="blog-card reveal bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-brand-dark group flex flex-col" data-category="marca-personal">
+                        <div class="aspect-video overflow-hidden relative">
+                            <a href="#" class="absolute inset-0 z-10" aria-label="Leer más"></a>
+                            <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=600" alt="Marca Personal" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-accent text-xs font-bold uppercase tracking-wider font-poppins">Marca Personal</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-xs"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> 6 min</span>
+                            </div>
+                            <h2 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-3 group-hover:text-accent transition-colors"><a href="#">Proyecta autoridad en tus reuniones corporativas</a></h2>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-4 flex-grow line-clamp-3">Tu presencia y comunicación no verbal hablan por ti antes de que abras la boca. Claves para entrar pisando fuerte.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">05 de Abril, 2024</span>
+                                <a href="#" class="text-accent font-bold text-sm hover:underline underline-offset-4 transition-all">Leer artículo &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Artículo Secundario 4 -->
+                    <article class="blog-card reveal bg-white dark:bg-brand-darker rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-brand-dark group flex flex-col" data-category="mentalidad">
+                        <div class="aspect-video overflow-hidden relative">
+                            <a href="#" class="absolute inset-0 z-10" aria-label="Leer más"></a>
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600" alt="Mentalidad" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-accent text-xs font-bold uppercase tracking-wider font-poppins">Mentalidad</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-xs"><i class="fa-regular fa-clock mr-1" aria-hidden="true"></i> 4 min</span>
+                            </div>
+                            <h2 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-3 group-hover:text-accent transition-colors"><a href="#">Rompiendo el techo de cristal desde dentro</a></h2>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm mb-4 flex-grow line-clamp-3">A menudo somos nosotras mismas quienes nos limitamos por miedo al fracaso o, lo que es peor, miedo al éxito.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">18 de Marzo, 2024</span>
+                                <a href="#" class="text-accent font-bold text-sm hover:underline underline-offset-4 transition-all">Leer artículo &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+                
+                <!-- Paginación Simple -->
+                <div class="mt-16 flex justify-center items-center gap-2 reveal">
+                    <button disabled aria-label="Página anterior" class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-brand-dark text-gray-400 cursor-not-allowed transition-colors"><i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i></button>
+                    <button class="w-10 h-10 rounded-full flex items-center justify-center bg-accent text-white font-bold text-sm shadow-md shadow-accent/30 transition-colors">1</button>
+                    <button class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-brand-dark text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-brand-dark transition-colors">2</button>
+                    <button aria-label="Página siguiente" class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-brand-dark text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-brand-dark transition-colors"><i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Compartido -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Botón Subir Arriba -->
+    <button id="scroll-to-top-btn" class="fixed bottom-28 right-7 z-40 bg-gray-800 dark:bg-white text-white dark:text-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none translate-y-10 focus:outline-none" aria-label="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Botón Flotante WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-fade-in-up">
+        <div id="wa-tooltip" class="hidden bg-white dark:bg-brand-darker text-gray-800 dark:text-gray-200 text-sm py-3 px-4 rounded-2xl shadow-xl border border-gray-100 dark:border-brand-dark relative transition-all duration-300 origin-bottom-right scale-0 opacity-0">
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-[#25D366]"></span>
+                </span>
+                <p class="font-medium pr-4">¡Hola! ¿En qué puedo ayudarte?</p>
+            </div>
+            <button id="close-wa-tooltip" class="absolute top-1 right-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 rounded-full transition-colors" aria-label="Cerrar mensaje">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+            <div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-white dark:bg-brand-darker border-b border-r border-gray-100 dark:border-brand-dark transform rotate-45"></div>
+        </div>
+        <a href="https://wa.me/34600000000?text=%C2%A1Hola%20Linet!%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform duration-300" aria-label="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Lógica y Funcionalidad Compartida -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

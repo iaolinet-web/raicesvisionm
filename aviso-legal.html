@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal | Linet Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="noindex, follow"> <!-- No indexamos páginas legales por lo general -->
+    
+    <!-- Favicon e Iconos de Apple -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Importación de las tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Final Compilado -->
+    <link href="output.css" rel="stylesheet">
+    
+    <!-- Evitar parpadeo de modo oscuro al cargar -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light dark:bg-black text-gray-800 dark:text-gray-200 font-sans antialiased flex flex-col min-h-screen transition-colors duration-300">
+
+    <!-- Loader Inicial -->
+    <div id="page-loader" class="fixed inset-0 z-[100] bg-brand-light dark:bg-black flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute w-16 h-16 border-4 border-gray-200 dark:border-brand-dark rounded-full"></div>
+            <div class="absolute w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <p class="mt-6 font-serif text-accent font-bold tracking-widest animate-pulse">Linet.</p>
+    </div>
+
+    <!-- Navbar -->
+    <div id="header-placeholder"></div>
+
+    <main class="flex-grow pt-40 pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabecera -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <span class="inline-block bg-accent/10 dark:bg-accent/20 text-accent dark:text-magenta-500 font-poppins text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
+                    Última actualización: Mayo 2024
+                </span>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6 leading-tight">Aviso Legal</h1>
+                <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">Transparencia y claridad sobre las condiciones de uso de este sitio web y los derechos de nuestra comunidad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
+                
+                <!-- Barra lateral de navegación (Sticky) -->
+                <aside class="hidden lg:block lg:col-span-1 sticky top-28 z-10 animate-fade-in-up">
+                    <div class="bg-white dark:bg-brand-darker rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+                        <h3 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-6">Índice legal</h3>
+                        <nav class="space-y-4 font-medium text-sm text-gray-600 dark:text-gray-400">
+                            <a href="#datos-identificativos" class="block hover:text-accent dark:hover:text-magenta-500 transition-colors">1. Datos Identificativos</a>
+                            <a href="#condiciones-uso" class="block hover:text-accent dark:hover:text-magenta-500 transition-colors">2. Condiciones de Uso</a>
+                            <a href="#propiedad-intelectual" class="block hover:text-accent dark:hover:text-magenta-500 transition-colors">3. Propiedad Intelectual</a>
+                            <a href="#responsabilidad" class="block hover:text-accent dark:hover:text-magenta-500 transition-colors">4. Exclusión de Responsabilidad</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- Contenido Legal -->
+                <div class="lg:col-span-3 bg-white dark:bg-brand-darker rounded-3xl p-8 md:p-12 border border-gray-100 dark:border-gray-800 shadow-sm text-gray-700 dark:text-gray-300 leading-relaxed space-y-12 animate-fade-in-up">
+                    
+                    <!-- Tarjeta Resumen Rápido (TL;DR) -->
+                    <div class="bg-gray-50 dark:bg-black/50 p-6 md:p-8 rounded-2xl border border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row items-start gap-4">
+                        <div class="text-accent dark:text-magenta-500 text-3xl shrink-0 mt-1">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900 dark:text-white mb-2">Resumen rápido</p>
+                            <p class="text-sm">El presente aviso legal regula el uso de este sitio web. En resumen, el contenido que aquí se muestra es propiedad de Linet Coaching, y al navegar por nuestra web, te comprometes a hacer un uso cívico y responsable de nuestros recursos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sección 1 -->
+                    <section id="datos-identificativos" class="scroll-mt-28">
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                            <i class="fa-solid fa-id-card text-accent dark:text-magenta-500 mr-4 text-xl" aria-hidden="true"></i> 1. Datos Identificativos
+                        </h2>
+                        <p class="mb-4">En cumplimiento con el deber de información recogido en el artículo 10 de la Ley de Servicios de la Sociedad de la Información y del Comercio Electrónico (u homóloga en tu país), a continuación se reflejan los siguientes datos:</p>
+                        <ul class="list-none space-y-3 bg-gray-50 dark:bg-brand-dark/30 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
+                            <li><strong class="text-gray-900 dark:text-white">Titular:</strong> Linet Pérez</li>
+                            <li><strong class="text-gray-900 dark:text-white">DNI/CUIT:</strong> 12345678A</li>
+                            <li><strong class="text-gray-900 dark:text-white">Domicilio Fiscal:</strong> Buenos Aires, Argentina</li>
+                            <li><strong class="text-gray-900 dark:text-white">Correo electrónico:</strong> legal@linetcoaching.com</li>
+                        </ul>
+                    </section>
+
+                    <!-- Sección 2 -->
+                    <section id="condiciones-uso" class="scroll-mt-28">
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                            <i class="fa-solid fa-scale-balanced text-accent dark:text-magenta-500 mr-4 text-xl" aria-hidden="true"></i> 2. Condiciones de Uso
+                        </h2>
+                        <p class="mb-4">El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+                        <p>El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que se ofrecen en el sitio web, absteniéndose de incurrir en actividades ilícitas o contrarias a la buena fe y al orden público.</p>
+                    </section>
+
+                    <!-- Sección 3 -->
+                    <section id="propiedad-intelectual" class="scroll-mt-28">
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                            <i class="fa-solid fa-copyright text-accent dark:text-magenta-500 mr-4 text-xl" aria-hidden="true"></i> 3. Propiedad Intelectual e Industrial
+                        </h2>
+                        <p class="mb-4">Linet Coaching por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, etc.).</p>
+                        <p>Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Linet Coaching.</p>
+                    </section>
+
+                    <!-- Sección 4 -->
+                    <section id="responsabilidad" class="scroll-mt-28">
+                        <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                            <i class="fa-solid fa-shield-halved text-accent dark:text-magenta-500 mr-4 text-xl" aria-hidden="true"></i> 4. Exclusión de Responsabilidad
+                        </h2>
+                        <p>Linet Coaching no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Compartido -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Botón Subir Arriba -->
+    <button id="scroll-to-top-btn" class="fixed bottom-6 right-6 z-40 bg-gray-800 dark:bg-white text-white dark:text-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none translate-y-10 focus:outline-none" aria-label="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Script principal -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

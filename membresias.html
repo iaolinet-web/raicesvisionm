@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membresías | Linet Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre al detalle nuestros planes de membresía. Compara opciones y elige la ruta que mejor se adapte a tus metas profesionales y personales.">
+
+    <!-- Favicon e Iconos de Apple -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Importación de las tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Final Compilado -->
+    <link href="output.css" rel="stylesheet">
+    
+    <!-- Evitar parpadeo de modo oscuro al cargar -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light dark:bg-black text-gray-800 dark:text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+    
+    <!-- Loader Inicial -->
+    <div id="page-loader" class="fixed inset-0 z-[100] bg-brand-light dark:bg-black flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute w-16 h-16 border-4 border-gray-200 dark:border-brand-dark rounded-full"></div>
+            <div class="absolute w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <p class="mt-6 font-serif text-accent font-bold tracking-widest animate-pulse">Linet.</p>
+    </div>
+
+    <!-- Navbar -->
+    <div id="header-placeholder"></div>
+
+    <!-- Contenido Principal: Comparativa -->
+    <main id="planes" class="flex-grow pt-32 pb-20 scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabecera -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <span class="text-accent text-sm font-bold uppercase tracking-wider mb-2 block font-poppins">Comparativa al detalle</span>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6 leading-tight">Elige tu camino</h1>
+                <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed max-w-2xl mx-auto font-sans">Descubre exactamente qué incluye cada membresía y encuentra la opción perfecta para tu nivel de compromiso actual.</p>
+            </div>
+
+            <!-- Grid Comparativo -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto animate-fade-in-up">
+                
+                <!-- Detalle Membresía Esencial -->
+                <div class="bg-white dark:bg-brand-darker rounded-3xl p-10 border border-gray-100 dark:border-gray-800 shadow-sm h-full flex flex-col">
+                    <div class="mb-10 border-b border-gray-100 dark:border-gray-800 pb-10">
+                        <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-3">Esencial</h2>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm mb-6">Acompañamiento mensual para mantener tu enfoque y claridad.</p>
+                        <div class="flex items-end gap-2">
+                            <span class="text-5xl font-bold text-gray-900 dark:text-white">$99</span>
+                            <span class="text-gray-500 dark:text-gray-400 mb-1">/mes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-4 uppercase text-sm tracking-wider">¿Para quién es ideal?</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-8 leading-relaxed">Profesionales que buscan mantener su enfoque y claridad con un seguimiento periódico, ideal para quienes ya tienen una base sólida pero necesitan dirección mensual.</p>
+                        
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-5 uppercase text-sm tracking-wider">¿Qué incluye exactamente?</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-accent dark:text-magenta-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <i class="fa-solid fa-circle-check text-accent dark:text-magenta-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="text-gray-900 dark:text-gray-200 block text-sm mb-1">Sesión mensual</strong>
+                                    <span class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed block">Una sesión estratégica al mes (60 min) para revisar avances, ajustar objetivos y trazar los siguientes pasos.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-accent dark:text-magenta-500 mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-gray-900 dark:text-gray-200 block text-sm mb-1">Soporte por email</strong>
+                                    <span class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed block">Resolución de dudas por correo electrónico para que nunca te sientas estancada entre sesiones.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://mpago.la/TU_ENLACE_AQUI" target="_blank" rel="noopener noreferrer" class="mt-auto w-full block text-center border-2 border-[#009EE3] text-[#009EE3] hover:bg-[#009EE3] hover:text-white dark:border-[#009EE3] dark:text-[#009EE3] dark:hover:bg-[#009EE3] dark:hover:text-white font-poppins font-medium py-4 px-6 rounded-full transition-all duration-300"><i class="fa-solid fa-handshake mr-1"></i> Pagar con MercadoPago</a>
+                </div>
+
+                <!-- Detalle Membresía Ejecutiva -->
+                <div class="bg-brand-dark dark:bg-brand-darker rounded-3xl p-10 border-2 border-accent dark:border-magenta-500 shadow-xl shadow-accent/20 dark:shadow-magenta-500/10 relative h-full flex flex-col">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-accent text-white px-6 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-md">Recomendado</div>
+                    
+                    <div class="mb-10 border-b border-gray-600 dark:border-gray-800 pb-10">
+                        <h2 class="text-3xl font-serif font-bold text-white mb-2">Ejecutivo</h2>
+                        <p class="text-gray-300 dark:text-gray-300 leading-relaxed text-sm mb-6">Estrategia intensiva, seguimiento semanal y soporte prioritario.</p>
+                        <div class="flex items-end gap-2">
+                            <span class="text-5xl font-bold text-white">$299</span>
+                            <span class="text-brand-muted mb-1">/mes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-white mb-4 uppercase text-sm tracking-wider">¿Para quién es ideal?</h3>
+                        <p class="text-gray-300 text-sm mb-8 leading-relaxed">Líderes, directivas y emprendedoras que necesitan un plan de acción a medida, superar obstáculos rápidamente y exigen rendición de cuentas para un crecimiento acelerado.</p>
+                        
+                        <h3 class="font-bold text-white mb-5 uppercase text-sm tracking-wider">¿Qué incluye exactamente?</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-star text-accent dark:text-magenta-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star text-accent dark:text-magenta-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star text-accent dark:text-magenta-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <div>
+                                    <strong class="text-white block text-sm mb-1">4 Sesiones al mes</strong>
+                                    <span class="text-gray-400 text-sm leading-relaxed block">Conexión semanal por videollamada para trazar estrategias, derribar bloqueos y mantener un ritmo de avance constante.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-star text-accent dark:text-magenta-500 mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-white block text-sm mb-1">Plan estratégico personalizado</strong>
+                                    <span class="text-gray-400 text-sm leading-relaxed block">Diseño y seguimiento exhaustivo de tu hoja de ruta profesional con metas claras y medibles a corto y largo plazo.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-star text-accent dark:text-magenta-500 mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-white block text-sm mb-1">Prioridad 24/7</strong>
+                                    <span class="text-gray-400 text-sm leading-relaxed block">Línea directa VIP por WhatsApp para resolver dudas urgentes y soporte continuo para acompañarte en cada desafío.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="contacto.html" class="mt-auto w-full block text-center bg-accent hover:bg-accent-hover dark:bg-magenta-600 dark:hover:bg-magenta-500 text-white font-poppins font-medium py-4 px-6 rounded-full transition-all duration-300 shadow-lg shadow-accent/30 dark:shadow-magenta-500/30 hover:scale-105 active:scale-95">Solicitar Membresía Ejecutiva</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Simplificado) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Botón Subir Arriba -->
+    <button id="scroll-to-top-btn" class="fixed bottom-6 right-6 z-40 bg-gray-800 dark:bg-white text-white dark:text-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none translate-y-10 focus:outline-none" aria-label="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Script principal -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

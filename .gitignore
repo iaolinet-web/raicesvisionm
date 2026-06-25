@@ -1,0 +1,11 @@
+# Dependencias
+node_modules/
+
+# Carpeta de compilación (Generada por build.js y Cloudflare)
+# Carpeta de construcción (El hosting la generará automáticamente)
+dist/
+
+# Archivos del sistema y logs
+.DS_Store
+npm-debug.log*
+.env

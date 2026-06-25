@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí | Linet Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Conoce a Linet, coach ejecutiva y mentora de liderazgo. Descubre su historia y metodología para ayudarte a alcanzar tu máximo potencial profesional.">
+
+    <!-- Favicon e Iconos de Apple -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Importación de las tipografías definidas en Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Final Compilado -->
+    <link href="output.css" rel="stylesheet">
+
+    <!-- Evitar parpadeo de modo oscuro al cargar -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light dark:bg-black text-gray-800 dark:text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+    
+    <!-- Loader Inicial -->
+    <div id="page-loader" class="fixed inset-0 z-[100] bg-brand-light dark:bg-black flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute w-16 h-16 border-4 border-gray-200 dark:border-brand-dark rounded-full"></div>
+            <div class="absolute w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <p class="mt-6 font-serif text-accent font-bold tracking-widest animate-pulse">Linet.</p>
+    </div>
+
+    <!-- Navbar -->
+    <div id="header-placeholder"></div>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow pt-32 pb-10">
+        
+        <!-- Hero Sobre Mí -->
+        <section id="historia" class="mb-24 px-4 animate-fade-in-up scroll-mt-20">
+            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2">
+                    <span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block font-poppins">Mi Historia</span>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-gray-800 dark:text-white mb-6 leading-tight">Hola, soy Linet</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-6 font-sans leading-relaxed">Soy coach ejecutiva, estratega y mentora de liderazgo. Mi misión es ayudarte a encontrar la claridad que necesitas para liderar con confianza, superar el síndrome del impostor y alcanzar tu siguiente nivel.</p>
+                </div>
+                <div class="w-full lg:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-accent/20 dark:bg-accent/10 rounded-3xl transform rotate-3 scale-105 transition-transform duration-500"></div>
+                        <!-- Cambia "mi-foto.jpg" por el nombre real de tu imagen -->
+                        <img src="mi-foto.jpg" alt="Linet Pérez" class="relative rounded-3xl shadow-2xl w-full max-w-md mx-auto object-cover border-4 border-white dark:border-brand-darker hover:rotate-0 hover:scale-105 transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque Narrativo -->
+        <section id="experiencia" class="py-20 px-4 bg-white dark:bg-brand-darker border-y border-gray-200 dark:border-brand-dark transition-colors duration-300 scroll-mt-20">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-serif font-bold text-center text-gray-800 dark:text-white mb-12 reveal">De la experiencia corporativa<br>al acompañamiento real</h2>
+                
+                <div class="space-y-8 text-gray-600 dark:text-gray-300 text-lg font-sans leading-relaxed reveal">
+                    <p>Durante mis primeros años en el mundo corporativo, descubrí de primera mano lo que significa chocar contra el famoso <em>techo de cristal</em>. Durante mucho tiempo, al igual que muchas de mis clientes actuales, creí que trabajar más duro, decir que sí a todo y sacrificar mi tiempo personal era la única fórmula válida para avanzar.</p>
+                    
+                    <p>Tras años asumiendo roles de liderazgo, descubrí que el verdadero crecimiento profesional y personal no proviene del agotamiento constante, sino de una combinación de <strong>estrategia inteligente, comunicación efectiva y un profundo autoconocimiento</strong>.</p>
+                    
+                    <blockquote class="border-l-4 border-accent pl-6 py-2 my-8 italic text-xl text-gray-800 dark:text-gray-200 font-serif bg-gray-50 dark:bg-brand-dark rounded-r-lg">
+                        "No acompaño desde la teoría de los libros, sino desde las cicatrices de la trinchera corporativa y el éxito empresarial."
+                    </blockquote>
+
+                    <p>Fue ese momento de revelación el que me impulsó a pivotar mi carrera. Decidí formarme con las instituciones más prestigiosas de coaching internacional y desarrollar una metodología propia. Un enfoque que no se queda en la motivación superficial, sino que baja a la tierra, estableciendo planes de acción, rutinas de rendición de cuentas y resultados tangibles.</p>
+                    
+                    <p>Hoy, dedico mi energía y conocimiento a acompañar a mujeres emprendedoras, mánagers y altas directivas. Mi objetivo es que rompan sus barreras internas, aprendan a comunicar su valor real en cualquier mesa de negociación y proyecten la autoridad que legítimamente merecen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores / Metodología -->
+        <section id="pilares" class="py-20 px-4 scroll-mt-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl font-serif font-bold text-gray-800 dark:text-white mb-4">Mis Pilares de Trabajo</h2>
+                    <p class="text-gray-600 dark:text-gray-400">En qué se basa mi enfoque a la hora de trabajar contigo.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="reveal bg-white dark:bg-brand-darker p-8 rounded-3xl border border-gray-100 dark:border-brand-dark text-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 text-accent text-2xl">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Foco Estratégico</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Menos tareas que no aportan y más acciones que mueven la aguja. Diseñamos planes realistas para tu situación actual.</p>
+                    </div>
+                    
+                    <div class="reveal bg-white dark:bg-brand-darker p-8 rounded-3xl border border-gray-100 dark:border-brand-dark text-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 text-accent text-2xl">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Acompañamiento Directo</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Te diré lo que necesitas escuchar, no lo que quieres oír. Construiremos una relación de sinceridad y confianza total.</p>
+                    </div>
+                    
+                    <div class="reveal bg-white dark:bg-brand-darker p-8 rounded-3xl border border-gray-100 dark:border-brand-dark text-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-accent/10 dark:bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 text-accent text-2xl">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Resultados Tangibles</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Medimos el progreso sesión a sesión. Si no hay avance medible, ajustamos la estrategia hasta dar con la clave.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="contacto-cta" class="py-16 px-4 mb-8 scroll-mt-20">
+            <div class="max-w-4xl mx-auto bg-brand-dark dark:bg-black rounded-[3rem] p-10 md:p-16 text-center border-2 border-accent/30 shadow-2xl reveal relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-accent/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-accent/20 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6 relative z-10">¿Lista para escribir tu próximo capítulo?</h2>
+                <p class="text-lg text-brand-muted mb-10 max-w-2xl mx-auto relative z-10">Tanto si buscas un acompañamiento individual VIP como si prefieres aprender a tu ritmo rodeada de una comunidad increíble, tengo un espacio para ti.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+                    <a href="membresias.html" class="bg-accent hover:bg-accent-hover text-white font-poppins font-medium py-4 px-8 rounded-full transition-transform shadow-lg shadow-accent/30 hover:scale-105 active:scale-95">Ver Membresías</a>
+                    <a href="contacto.html" class="bg-transparent border border-white/30 text-white hover:bg-white/10 font-poppins font-medium py-4 px-8 rounded-full transition-all hover:scale-105 active:scale-95">Escríbeme</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Compartido -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Botón Subir Arriba -->
+    <button id="scroll-to-top-btn" class="fixed bottom-28 right-7 z-40 bg-gray-800 dark:bg-white text-white dark:text-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none translate-y-10 focus:outline-none" aria-label="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Botón Flotante WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-fade-in-up">
+        <div id="wa-tooltip" class="hidden bg-white dark:bg-brand-darker text-gray-800 dark:text-gray-200 text-sm py-3 px-4 rounded-2xl shadow-xl border border-gray-100 dark:border-brand-dark relative transition-all duration-300 origin-bottom-right scale-0 opacity-0">
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-[#25D366]"></span>
+                </span>
+                <p class="font-medium pr-4">¡Hola! ¿En qué puedo ayudarte?</p>
+            </div>
+            <button id="close-wa-tooltip" class="absolute top-1 right-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 rounded-full transition-colors" aria-label="Cerrar mensaje">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+            <div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-white dark:bg-brand-darker border-b border-r border-gray-100 dark:border-brand-dark transform rotate-45"></div>
+        </div>
+        <a href="https://wa.me/34600000000?text=%C2%A1Hola%20Linet!%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform duration-300" aria-label="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Lógica y Funcionalidad Compartida -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces | Linet Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Enlaces oficiales de Linet Coaching. Descubre mis programas, cursos y recursos gratuitos.">
+    <meta name="robots" content="noindex, follow"> <!-- Generalmente las link-in-bio no necesitan indexarse -->
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Importación de las tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Final Compilado -->
+    <link href="output.css" rel="stylesheet">
+
+    <!-- Evitar parpadeo de modo oscuro al cargar -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light dark:bg-black text-gray-800 dark:text-gray-200 font-sans antialiased min-h-screen flex items-center justify-center py-10 px-4 transition-colors duration-300">
+    
+    <!-- Botón de Tema (Modo Oscuro) Superior -->
+    <div class="absolute top-4 right-4 z-50">
+        <button id="theme-toggle" type="button" aria-label="Alternar tema" class="w-10 h-10 rounded-full bg-white dark:bg-brand-darker border border-gray-200 dark:border-brand-dark text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent shadow-sm flex items-center justify-center transition-colors focus:outline-none">
+            <i id="theme-toggle-dark-icon" class="hidden fa-solid fa-moon text-sm"></i>
+            <i id="theme-toggle-light-icon" class="hidden fa-solid fa-sun text-sm"></i>
+        </button>
+    </div>
+
+    <!-- Contenedor Principal (Optimizado para móvil) -->
+    <main class="w-full max-w-md mx-auto animate-fade-in-up">
+        
+        <!-- Cabecera de Perfil -->
+        <header class="text-center mb-8">
+            <div class="relative inline-block mb-4">
+                <div class="absolute inset-0 bg-accent rounded-full blur opacity-40"></div>
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="Linet Pérez" class="relative w-24 h-24 rounded-full object-cover border-2 border-white dark:border-brand-darker shadow-lg mx-auto">
+            </div>
+            <h1 class="text-2xl font-serif font-bold text-gray-800 dark:text-white mb-1">Linet Coaching</h1>
+            <p class="text-gray-600 dark:text-gray-400 text-sm font-medium">Estrategia, Liderazgo & Claridad ✨</p>
+        </header>
+
+        <!-- Lista de Enlaces -->
+        <div class="flex flex-col gap-4 mb-10">
+            
+            <!-- Enlace Destacado -->
+            <a href="membresias.html" class="block w-full bg-accent text-white border border-accent hover:bg-accent-hover text-center py-4 px-6 rounded-2xl font-poppins font-medium shadow-lg shadow-accent/30 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                <span class="absolute top-0 right-0 bg-white text-accent text-[10px] font-bold px-2 py-0.5 rounded-bl-lg rounded-tr-xl">NUEVO</span>
+                Únete al Plan Ejecutivo (-20% OFF)
+            </a>
+
+            <!-- Enlaces Normales -->
+            <a href="index.html" class="block w-full bg-white dark:bg-brand-darker border border-gray-200 dark:border-brand-dark hover:border-accent dark:hover:border-accent text-gray-800 dark:text-white text-center py-4 px-6 rounded-2xl font-poppins font-medium shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                Mi Sitio Web Oficial
+            </a>
+            
+            <a href="shop.html" class="block w-full bg-white dark:bg-brand-darker border border-gray-200 dark:border-brand-dark hover:border-accent dark:hover:border-accent text-gray-800 dark:text-white text-center py-4 px-6 rounded-2xl font-poppins font-medium shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                📚 Tienda y E-Books
+            </a>
+
+            <a href="blog.html" class="block w-full bg-white dark:bg-brand-darker border border-gray-200 dark:border-brand-dark hover:border-accent dark:hover:border-accent text-gray-800 dark:text-white text-center py-4 px-6 rounded-2xl font-poppins font-medium shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                ✍️ Últimos artículos (Blog)
+            </a>
+            
+            <a href="contacto.html" class="block w-full bg-white dark:bg-brand-darker border border-gray-200 dark:border-brand-dark hover:border-accent dark:hover:border-accent text-gray-800 dark:text-white text-center py-4 px-6 rounded-2xl font-poppins font-medium shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                ✉️ Trabaja conmigo (Contacto)
+            </a>
+        </div>
+
+        <!-- Redes Sociales Pequeñas al final -->
+        <div class="flex justify-center gap-6">
+            <a href="mailto:hola@linetcoaching.com" aria-label="Email" class="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors text-xl"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors text-xl"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@tu_canal" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </main>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

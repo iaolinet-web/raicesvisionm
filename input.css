@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Estado inicial: Invisible y desplazado hacia abajo */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  /* Estado final: Visible y en su posición original */
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

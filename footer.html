@@ -1,0 +1,81 @@
+<!-- Modal del Carrito (Global) -->
+<div id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title" class="hidden fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 opacity-0 items-center justify-center px-4">
+    <div class="bg-white dark:bg-brand-darker w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col max-h-[80vh]">
+        <div class="p-6 border-b border-gray-100 dark:border-brand-dark flex justify-between items-center">
+            <h3 id="cart-modal-title" class="text-xl font-serif font-bold text-gray-800 dark:text-white"><i class="fa-solid fa-cart-shopping mr-2 text-accent" aria-hidden="true"></i> Tu Carrito</h3>
+            <button id="close-cart-modal" aria-label="Cerrar carrito" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        <div id="cart-items-container" class="p-6 overflow-y-auto flex-grow space-y-3">
+            <!-- Los items se inyectarán aquí vía JS -->
+        </div>
+        <div class="p-6 border-t border-gray-100 dark:border-brand-dark bg-gray-50 dark:bg-black">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-medium text-gray-600 dark:text-gray-400">Total estimado:</span>
+                <span id="cart-total" class="text-2xl font-bold text-gray-800 dark:text-white">$0.00</span>
+            </div>
+            <button id="checkout-btn" class="w-full bg-[#009EE3] hover:bg-[#0080B7] text-white font-poppins font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg shadow-[#009EE3]/30 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-handshake"></i> Pagar con MercadoPago
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Newsletter (Pop-up de Bienvenida) -->
+<div id="newsletter-popup-modal" role="dialog" aria-modal="true" aria-labelledby="newsletter-popup-title" class="hidden fixed inset-0 z-[70] bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 items-center justify-center px-4">
+    <div class="bg-white dark:bg-brand-darker w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 relative flex flex-col sm:flex-row">
+        <button id="close-newsletter-popup" aria-label="Cerrar pop-up" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white bg-white/80 dark:bg-black/50 backdrop-blur p-2 rounded-full focus:outline-none transition-colors z-20 shadow-sm">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        
+        <div class="w-full sm:w-2/5 bg-accent hidden sm:block relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=400" alt="Newsletter" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply">
+        </div>
+        
+        <div class="w-full sm:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+            <span class="text-accent dark:text-magenta-500 font-poppins text-xs font-bold uppercase tracking-wider mb-2 block">Regalo de Bienvenida</span>
+            <h3 id="newsletter-popup-title" class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-3 leading-tight">Únete a la comunidad</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">Recibe recursos exclusivos, estrategias de liderazgo y novedades directamente en tu correo. Sin spam, lo prometo.</p>
+            <form id="popup-newsletter-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE_NEWSLETTER" method="POST" class="space-y-4">
+                <div>
+                    <input type="email" id="popup-newsletter-email" name="email" aria-label="Correo electrónico" placeholder="Tu correo electrónico" required class="w-full bg-gray-50 dark:bg-black/50 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all shadow-sm text-sm">
+                    <p id="popup-newsletter-email-error" role="alert" class="hidden text-red-500 text-xs mt-1 ml-1">Por favor, introduce un correo válido.</p>
+                </div>
+                <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-white font-poppins font-medium py-3 px-6 rounded-xl transition-all shadow-lg shadow-accent/30 hover:scale-105 active:scale-95 text-sm">
+                    ¡Quiero suscribirme!
+                </button>
+            </form>
+            <div id="popup-newsletter-success-msg" role="alert" class="hidden mt-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 text-green-700 dark:text-green-400 font-poppins text-xs py-3 px-4 rounded-xl items-center gap-2">
+                <i class="fa-solid fa-circle-check text-base"></i> ¡Gracias! Revisa tu bandeja de entrada.
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-brand-dark dark:bg-brand-darker pt-12 pb-10 text-center flex flex-col items-center mt-auto border-t border-brand-darker">
+    <div class="reveal max-w-2xl w-full px-4 mb-12">
+        <h3 class="text-2xl font-serif font-bold text-white mb-3">Únete a la Newsletter</h3>
+        <p class="text-brand-muted text-sm mb-6">Recibe recursos exclusivos, consejos de coaching y novedades directamente en tu correo.</p>
+        <form id="newsletter-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE_NEWSLETTER" method="POST" class="flex flex-col sm:flex-row gap-3 items-start">
+            <div class="flex-grow w-full">
+                <input type="email" id="newsletter-email" name="email" aria-label="Correo electrónico para suscribirse a la newsletter" placeholder="Tu correo electrónico" required class="w-full bg-brand-darker/50 dark:bg-black/50 border border-brand-muted/30 text-white placeholder-brand-muted rounded-full px-6 py-3 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all shadow-sm">
+                <p id="newsletter-email-error" role="alert" class="hidden text-red-400 text-xs mt-2 ml-4 text-left" style="animation-duration: 0.3s">Introduce un correo electrónico válido.</p>
+            </div>
+            <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-accent to-magenta-500 hover:from-accent-hover hover:to-magenta-600 text-white font-poppins font-medium py-3 px-8 rounded-full transition-all whitespace-nowrap shadow-lg shadow-accent/30 hover:scale-105 active:scale-95">Suscribirme</button>
+        </form>
+        <div id="newsletter-success-msg" role="alert" class="hidden mt-4 bg-green-900/30 border border-green-800/50 text-green-400 font-poppins text-sm py-3 px-6 rounded-full items-center gap-2">
+            <i class="fa-solid fa-circle-check"></i> ¡Gracias por suscribirte! Revisa tu bandeja de entrada.
+        </div>
+    </div>
+    
+    <div class="w-full border-t border-white/10 dark:border-brand-dark mb-8"></div>
+    <img src="logo.png" alt="Linet Coaching Logo" class="h-10 w-auto mx-auto mb-4 opacity-75">
+    
+    <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-brand-muted mb-4">
+        <a href="aviso-legal.html" class="hover:text-accent transition-colors">Aviso Legal</a>
+        <a href="privacidad.html" class="hover:text-accent transition-colors">Política de Privacidad</a>
+        <a href="cookies.html" class="hover:text-accent transition-colors">Política de Cookies</a>
+    </div>
+    <p class="text-sm text-brand-muted">&copy; <span id="current-year">2024</span> Linet Coaching. Todos los derechos reservados.</p>
+</footer>

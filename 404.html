@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada | Linet Coaching</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="noindex, follow">
+
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Importación de las tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Final Compilado -->
+    <link href="output.css" rel="stylesheet">
+
+    <!-- Evitar parpadeo de modo oscuro al cargar -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light dark:bg-black text-gray-800 dark:text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+    
+    <!-- Loader Inicial -->
+    <div id="page-loader" class="fixed inset-0 z-[100] bg-brand-light dark:bg-black flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute w-16 h-16 border-4 border-gray-200 dark:border-brand-dark rounded-full"></div>
+            <div class="absolute w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <p class="mt-6 font-serif text-accent font-bold tracking-widest animate-pulse">Linet.</p>
+    </div>
+
+    <!-- Navbar -->
+    <header class="fixed w-full top-0 z-50 flex flex-col transition-colors duration-300">
+        <!-- Contenedor Navbar -->
+        <div class="bg-brand-light/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-brand-dark w-full">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-accent">Linet.</a>
+                <div class="flex items-center gap-2 md:gap-6">
+                    <nav class="hidden md:flex font-poppins gap-6">
+                        <a href="index.html" class="hover:text-accent-hover transition-colors">Inicio</a>
+                        <a href="sobre-mi.html" class="hover:text-accent-hover transition-colors">Sobre Mí</a>
+                        <a href="blog.html" class="hover:text-accent-hover transition-colors">Blog</a>
+                        <a href="shop.html" class="hover:text-accent-hover transition-colors">Tienda</a>
+                        <a href="membresias.html" class="hover:text-accent-hover transition-colors">Membresías</a>
+                        <a href="contacto.html" class="hover:text-accent-hover transition-colors">Contacto</a>
+                    </nav>
+                    <button id="theme-toggle" type="button" aria-label="Alternar tema" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-brand-dark focus:outline-none rounded-lg text-sm p-2.5 transition-colors">
+                        <i id="theme-toggle-dark-icon" class="hidden fa-solid fa-moon text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="hidden fa-solid fa-sun text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" type="button" aria-label="Abrir menú" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-brand-dark focus:outline-none rounded-lg text-sm p-2.5 transition-colors">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-brand-light/80 dark:bg-brand-darker/80 backdrop-blur-md border-b border-gray-200 dark:border-brand-dark shadow-lg z-40 py-4 px-6 flex flex-col gap-4 text-center font-poppins transition-colors duration-300">
+            <a href="index.html" class="text-gray-800 dark:text-gray-200 hover:text-accent-hover transition-colors">Inicio</a>
+            <a href="sobre-mi.html" class="text-gray-800 dark:text-gray-200 hover:text-accent-hover transition-colors">Sobre Mí</a>
+            <a href="blog.html" class="text-gray-800 dark:text-gray-200 hover:text-accent-hover transition-colors">Blog</a>
+            <a href="shop.html" class="text-gray-800 dark:text-gray-200 hover:text-accent-hover transition-colors">Tienda</a>
+            <a href="membresias.html" class="text-gray-800 dark:text-gray-200 hover:text-accent-hover transition-colors">Membresías</a>
+            <a href="contacto.html" class="text-gray-800 dark:text-gray-200 hover:text-accent-hover transition-colors">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Contenido 404 -->
+    <main class="flex-grow pt-32 pb-20 flex flex-col items-center justify-center min-h-[70vh]">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
+            <div class="mb-8 text-accent animate-float">
+                <i class="fa-solid fa-compass text-6xl md:text-8xl opacity-90"></i>
+            </div>
+            <h1 class="text-8xl md:text-9xl font-serif font-bold text-gray-800 dark:text-white mb-2 leading-none">404</h1>
+            <h2 class="text-2xl md:text-4xl font-serif font-bold text-gray-800 dark:text-white mb-6">¡Ups! Parece que te has desviado del camino.</h2>
+            
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-lg mx-auto font-sans leading-relaxed">
+                No te preocupes, hasta las mejores líderes necesitan recalcular su ruta de vez en cuando. La página que buscas no existe, ha sido movida o tecleaste mal la dirección.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="index.html" class="w-full sm:w-auto bg-accent hover:bg-accent-hover text-white font-poppins font-medium py-4 px-8 rounded-full transition-all duration-300 shadow-lg shadow-accent/30 hover:scale-105 active:scale-95 inline-flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+                </a>
+                <a href="contacto.html" class="w-full sm:w-auto bg-transparent hover:bg-gray-100 dark:hover:bg-brand-darker border-2 border-gray-200 dark:border-brand-dark text-gray-700 dark:text-gray-300 font-poppins font-medium py-3.5 px-8 rounded-full transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-600 inline-flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-life-ring"></i> Necesito ayuda
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark dark:bg-brand-darker pt-12 pb-10 text-center flex flex-col items-center mt-auto">
+        <!-- Newsletter -->
+        <div class="max-w-2xl w-full px-4 mb-12">
+            <h3 class="text-2xl font-serif font-bold text-white mb-3">Únete a la Newsletter</h3>
+            <p class="text-brand-muted text-sm mb-6">Recibe recursos exclusivos, consejos de coaching y novedades directamente en tu correo.</p>
+            <form id="newsletter-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE_NEWSLETTER" method="POST" class="flex flex-col sm:flex-row gap-3 items-start">
+                <div class="flex-grow w-full">
+                    <input type="email" id="newsletter-email" name="email" placeholder="Tu correo electrónico" required class="w-full bg-brand-darker/50 dark:bg-black/50 border border-brand-muted/30 text-white placeholder-brand-muted rounded-full px-6 py-3 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors shadow-sm">
+                    <p id="newsletter-email-error" class="hidden text-red-400 text-xs mt-2 ml-4 text-left" style="animation-duration: 0.3s">Introduce un correo electrónico válido.</p>
+                </div>
+                <button type="submit" class="w-full sm:w-auto bg-accent hover:bg-accent-hover text-white font-poppins font-medium py-3 px-8 rounded-full transition-colors whitespace-nowrap shadow-lg shadow-accent/30">Suscribirme</button>
+            </form>
+            <!-- Mensaje de Éxito Newsletter (Oculto por defecto) -->
+            <div id="newsletter-success-msg" class="hidden mt-4 bg-green-900/30 border border-green-800/50 text-green-400 font-poppins text-sm py-3 px-6 rounded-full inline-flex items-center gap-2">
+                <i class="fa-solid fa-circle-check"></i> ¡Gracias por suscribirte! Revisa tu bandeja de entrada.
+            </div>
+        </div>
+        
+        <div class="w-full border-t border-white/10 dark:border-brand-dark mb-8"></div>
+
+        <span class="font-serif text-2xl font-bold text-white mb-4">Linet Coaching</span>
+        
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-brand-muted mb-4">
+            <a href="aviso-legal.html" class="hover:text-accent transition-colors">Aviso Legal</a>
+            <a href="privacidad.html" class="hover:text-accent transition-colors">Política de Privacidad</a>
+            <a href="cookies.html" class="hover:text-accent transition-colors">Política de Cookies</a>
+        </div>
+
+        <p class="text-sm text-brand-muted">&copy; <span id="current-year">2024</span> Linet Coaching. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón Subir Arriba -->
+    <button id="scroll-to-top-btn" class="fixed bottom-28 right-7 z-40 bg-gray-800 dark:bg-white text-white dark:text-gray-800 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none translate-y-10 focus:outline-none" aria-label="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Botón Flotante WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <div id="wa-tooltip" class="hidden bg-white dark:bg-brand-darker text-gray-800 dark:text-gray-200 text-sm py-3 px-4 rounded-2xl shadow-xl border border-gray-100 dark:border-brand-dark relative transition-all duration-300 origin-bottom-right scale-0 opacity-0">
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-[#25D366]"></span>
+                </span>
+                <p class="font-medium pr-4">¡Hola! ¿En qué puedo ayudarte?</p>
+            </div>
+            <button id="close-wa-tooltip" class="absolute top-1 right-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 rounded-full transition-colors" aria-label="Cerrar mensaje">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+            <div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-white dark:bg-brand-darker border-b border-r border-gray-100 dark:border-brand-dark transform rotate-45"></div>
+        </div>
+        <a href="https://wa.me/34600000000?text=%C2%A1Hola%20Linet!%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform duration-300" aria-label="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Script principal -->
+    <script src="main.js" defer></script>
+</body>
+</html>
